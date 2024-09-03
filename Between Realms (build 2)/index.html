@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Between Realms</title>
+
+        <link rel="stylesheet" href="css/fonts.css"/>
+        <link rel="stylesheet" href="css/layout.css"/>
+
+        <link rel="icon" href="assets/images/enemy1.png"/>
+    </head>
+    <body>
+        <!-- ----- Load Audio ----- -->
+
+        <!-- [ Music ]-->
+        <audio id="menu" src="assets/audio/music/menu.mp3" loop></audio>
+        <audio id="level1" src="assets/audio/music/level1.mp3" loop></audio>
+        <audio id="level2" src="assets/audio/music/level2.mp3" loop></audio>
+        <audio id="boss" src="assets/audio/music/boss.mp3" loop></audio>
+
+        <!-- [ Sounds ] -->
+        <audio id="splash" src="assets/audio/sounds/splash.mp3" volume="0.1"></audio>
+        <audio id="button" src="assets/audio/sounds/button.mp3"></audio>
+        <audio id="load" src="assets/audio/sounds/load.mp3" loop></audio>
+        <audio id="shoot" src="assets/audio/sounds/shoot.mp3" volume="0.5"></audio>
+        <audio id="special" src="assets/audio/sounds/special.wav"></audio>
+        <audio id="explode" src="assets/audio/sounds/explode.wav" volume="0.5"></audio>
+        <audio id="warning" src="assets/audio/sounds/warning.mp3" loop></audio>
+
+        <!-- ----- Load Images ----- -->
+    
+        <img id="background1" src="assets/images/backgrounds/background1.png" style="display:none;"/>
+        <img id="background2" src="assets/images/backgrounds/background2.png" style="display:none;"/>
+        <img id="background3" src="assets/images/backgrounds/background3.png" style="display:none;"/>
+        <img id="ship" src="assets/images/ship.png" style="display:none;"/>
+        <img id="bullet" src="assets/images/bullets/bullet.png" style="display:none;"/>
+
+        <!-- [ Particles ] -->
+        <img id="explosion1" src="assets/images/particles/explosion1.png" style="display:none;"/>
+        <img id="explosion2" src="assets/images/particles/explosion2.png" style="display:none;"/>
+        <img id="rift" src="assets/images/particles/rift.png" style="display:none;"/>
+        <img id="caution" src="assets/images/particles/caution.png" style="display:none;"/>
+        <img id="rock" src="assets/images/particles/rock.png" style="display:none;"/>
+
+        <!-- [ Enemies ] -->
+        <img id="enemy1" src="assets/images/enemies/glider.png" style="display:none;"/>
+        <img id="enemy2" src="assets/images/enemies/missile_launcher.png" style="display:none;"/>
+        <img id="enemy3" src="assets/images/enemies/missile.png" style="display:none;"/>
+        <img id="enemy4" src="assets/images/enemies/asteroid.png" style="display:none;"/>
+        <img id="enemy5" src="assets/images/enemies/laser_shooter.png" style="display:none;"/>
+        <img id="enemy6" src="assets/images/enemies/enemy_laser.png" style="display:none;"/>
+        <img id="enemy7" src="assets/images/enemies/mega-glider.png" style="display:none;"/>
+        <img id="enemy8" src="assets/images/enemies/enemy_bullet.png" style="display:none;"/>
+        <img id="enemy9" src="assets/images/enemies/dodger.png" style="display:none;"/>
+
+        <div id="container">
+            <div class="layout" id="splash-layout" onclick="playAudio('splash');splashClick()">
+                <p id="splash-text1">Made by</p>
+                <img id="splash-logo" src="assets/images/logo.png"/>
+                <p id="splash-text2">Click to continue</p>
+            </div>
+            <div class="layout" id="menu-layout">
+                <img id="menu-background" src="assets/images/backgrounds/menu.png" width="480" height="640"/>
+                <img id="menu-graphic1" src="assets/images/graphics/graphic1.png" width="240" height="240"/>
+                <img id="menu-graphic2" src="assets/images/graphics/graphic2.png" width="240" height="240"/>
+                <div class="sublayout" id="title-sublayout">
+                    <h3 id="menu-title">BETWEEN<br/>REALMS</h3>
+                    <button id="menu-play" onclick="playAudio('button');menuPlay()">PLAY</button>
+                </div>
+            </div>
+            <div class="layout" id="cutscene-layout" onclick="startAudio('button');progressCutscene()">
+                <div id="cutscene-imagelist">
+                    <!-- Cutscene 1 (0 - 2) -->
+                    <img class="cutscene-image" src="assets/images/cutscenes/cutscene1.png" width="480" height="480"/>
+                    <img class="cutscene-image" src="assets/images/cutscenes/cutscene2.png" width="480" height="480"/>
+                    <img class="cutscene-image" src="assets/images/cutscenes/cutscene3.png" width="480" height="480"/>
+                    <img class="cutscene-image" src="assets/images/cutscenes/cutscene4.png" width="480" height="480"/>
+                    <img class="cutscene-image" src="assets/images/cutscenes/cutscene5.png" width="480" height="480"/>
+                </div>
+                <div id="cutscene-textbox">
+                    <!-- Cutscene 1 (0 - 9) -->
+                    <p class="cutscene-text">Long ago, there was a civilization called MINORALUS.</p>
+                    <p class="cutscene-text">It was a thriving space faring society with thousands of years of history.</p>
+                    <p class="cutscene-text">Using warp drive, it was able to unite its neighboring solar systems.</p>
+                    <p class="cutscene-text">Suddenly in the year 9900, a new celestial body appeared nearby.</p>
+                    <p class="cutscene-text">An exploration team was sent out to investigate.</p>
+                    <p class="cutscene-text">As they approached, they were attacked.</p>
+                    <p class="cutscene-text">The team was massacred, leaving only one survivor, "Ivory", though they badly damaged.</p>
+                    <p class="cutscene-text">They went into prolonged warp drive in order to evade their pursuers.</p>
+                    <p class="cutscene-text">After going under the radar, Ivory starts a one-man offensive.</p>
+                    <p class="cutscene-text">..play 1</p>
+                    <p class="cutscene-text">Following their brief victory, Ivory repaired and refueled using enemy parts.</p>
+                    <p class="cutscene-text">With a newly refurbished nagivation system, Ivory precisely targeted </p>
+                    <p class="cutscene-text">..play 2</p>
+                </div>
+                <div id="cutscene-textcover"></div>
+                <p id="cutscene-continue">Click to continue</p>
+            </div>
+            <div class="layout" id="controls-layout">
+                <h3 id="controls-title">CONTROLS</h3>
+
+                <p class="controls-tip">Use ARROW KEYS or WASD to move</p>
+                <img class="controls-image" src="assets/images/graphics/tip1.png" width="80" height="80"/>
+
+                <p class="controls-tip">Press SPACE to shoot</p>
+                <img class="controls-image" src="assets/images/graphics/tip2.png" width="80" height="80"/>
+
+                <p class="controls-tip">Hold X to charge power, then press SPACE to release special attack</p>
+                <img class="controls-image" src="assets/images/graphics/tip3.png" width="80" height="80"/>
+
+                <p class="controls-tip">Press ENTER to pause the game</p>
+
+                <p class="controls-tip">Click to continue</p>
+            </div>
+            <div class="layout" id="game-layout">
+                <div id="game-container"></div>
+                <div class="sublayout" id="pause-sublayout">
+                    <h2 id="pause-text">PAUSED</h2>
+                </div>
+            </div>
+            <div class="layout" id="gameover-layout" onclick="splashClick()">
+                <h1 id="gameover-text1">GAME<br/>OVER</h1>
+                <p id="gameover-text2">Click to return to menu.</p>
+            </div>
+        </div>
+
+        <script src="js/core/inputs.js"></script>
+        <script src="js/core/assets.js"></script>
+
+        <script src="js/sprites/player.js"></script>
+        <script src="js/sprites/bullets.js"></script>
+        <script src="js/sprites/enemies.js"></script>
+        <script src="js/sprites/particles.js"></script>
+
+
+        <script src="js/display/hud.js"></script>
+        <script src="js/core/game.js"></script>
+
+        <script src="js/levels/level1.js"></script>
+        <script src="js/levels/level2.js"></script>
+
+        <script src="js/display/layout.js"></script>
+        <script src="js/display/cutscene.js"></script>
+    </body>
+</html>

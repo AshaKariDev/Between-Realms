@@ -1,0 +1,189 @@
+body { margin: 0; background: #808080; color: #ffffff; position: fixed; }
+h1 { font: 100px TeenyTinyPixls; margin: 0; }
+h2 { font: 75px TeenyTinyPixls; margin: 0; }
+h3 { font: 50px TeenyTinyPixls;margin: 0; }
+p { font: 20px TeenyTinyPixls; margin: 0; }
+button { font-family: TeenyTinyPixls; }
+img { image-rendering: pixelated; }
+
+
+#container {
+    width: 480px;
+    height: 640px;
+    user-select: none;
+    overflow: hidden;
+}
+
+.layout {
+    width: 480px;
+    height: 640px;
+    background: #000000;
+    display: none;
+}
+.sublayout {
+    width: 480px;
+    height: 640px;
+    display: none;
+}
+.layout * { position: absolute; }
+
+
+/* Splash */
+#splash-layout {
+    background: #ffffff;
+}
+
+#splash-text1 {
+    color: #000000;
+    top: 170px;
+    width: 480px;
+    text-align: center;
+}
+
+#splash-logo {
+    top: 200px;
+    left: 120px;
+    width: 240px;
+    height: 240px;
+}
+
+#splash-text2 {
+    color: #000000;
+    top: 500px;
+    width: 480px;
+    text-align: center;
+}
+
+/* Menu */
+#menu-graphic1 {
+    transition: 3s;
+    top: -300px;
+    left: 240px;
+}
+.shown #menu-graphic1 {
+    top: 160px;
+    left: 240px;
+}
+
+#menu-graphic2 {
+    transition: 3s;
+    top: 400px;
+    left: -300px;
+}
+
+.shown #menu-graphic2 {
+    top: 400px;
+    left: 40px;
+}
+
+#menu-title {
+    transition: 5s;
+    left: -1000px;
+    top: 50px;
+}
+
+.shown #menu-title {
+    left: 40px;
+    top: 50px;
+}
+
+#menu-play {
+    transition: 5s;
+    top: -320px;
+    left: 40px;
+    width: 75px;
+    height: 25px;
+    border: none;
+    background: none;
+    color: #ffffff;
+    padding: 0;
+    font-size: 25px;
+}
+
+.shown #menu-play {
+    top: 320px;
+    left: 40px;
+}
+
+/* Cutscene */
+#cutscene-imagelist {
+    width: 480px;
+    height: 480px;
+    background: blue;
+}
+
+
+#cutscene-textbox {
+    top: 480px;
+    padding: 5px;
+    width: 470px;
+    height: 150px;
+    background: #000000;
+}
+
+#cutscene-textcover {
+    transition: 10s linear;
+    top: 480px;
+    width: 480px;
+    height: 160px;
+    background: #000000;
+}
+
+#cutscene-continue {
+    transition: 10s linear;
+    top: 615px;
+    padding: 0px 5px;
+    width: 470px;
+    text-align: right;
+}
+
+#cutscene-textcover.reveal {
+    top: 640px;
+}
+
+/* Controls */
+#controls-title {
+    width: 480px;
+    top: 20px;
+    text-align: center;
+}
+.controls-tip {
+    width: 300px;
+    left: 20px;
+}
+.controls-image {
+    left: 340px;
+}
+
+.controls-tip:nth-child(2), .controls-image:nth-child(3) { top: 120px; }
+.controls-tip:nth-child(4), .controls-image:nth-child(5) { top: 210px; }
+.controls-tip:nth-child(6), .controls-image:nth-child(7) { top: 300px; }
+.controls-tip:nth-child(8) { width: 440px; top: 420px; }
+.controls-tip:nth-child(9) { display: none; text-align: center; width: 440px; top: 550px; }
+
+/* Pause */
+#pause-sublayout {
+    background: #00000080;
+}
+
+#pause-text {
+    top: 210px;
+    width: 480px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Game Over */
+#gameover-text1 {
+    top: 210px;
+    width: 480px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#gameover-text2 {
+    top: 450px;
+    width: 480px;
+    text-align: center;
+    color: #ffffff;
+}
